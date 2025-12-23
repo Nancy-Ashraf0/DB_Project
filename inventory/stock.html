@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>محضر جرد الأصناف</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+
+<div class="page">
+  <!-- Header -->
+  <div class="header">
+    <div class="left">
+      <button id="backBtn">⬅ العودة</button>
+      <h1>محضر جرد الأصناف</h1>
+      <p>تاريخ الجرد: <span id="dateText"></span></p>
+    </div>
+
+    <div class="right no-print">
+      <button onclick="printPage()">🖨 طباعة / PDF</button>
+      <button onclick="downloadCSV()">⬇ تنزيل CSV</button>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="filters no-print">
+    <div>
+      <label>نوع الجرد</label>
+      <select id="typeFilter"></select>
+    </div>
+
+    <div>
+      <label>تاريخ الجرد</label>
+      <input type="date" id="dateInput">
+    </div>
+
+    <div>
+      <label>بحث</label>
+      <input type="search" id="searchInput" placeholder="اسم أو رقم">
+    </div>
+
+    <div class="checkbox">
+      <input type="checkbox" id="zeroCheck">
+      <label>عرض الأصناف صفرية الكمية</label>
+    </div>
+  </div>
+
+  <!-- Print Header -->
+  <div class="print-only center">
+    <h2>محضر جرد الأصناف</h2>
+    <p>التاريخ: <span id="printDate"></span> — كلية هندسة</p>
+  </div>
+
+  <!-- Table -->
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>قيمة</th>
+          <th>سعر الوحدة</th>
+          <th>الزيادة</th>
+          <th>العجز</th>
+          <th>الحالة</th>
+          <th>الرصيد الافتتاحي</th>
+          <th>الموجود</th>
+          <th>الوحدة</th>
+          <th>اسم الصنف</th>
+          <th>رقم الصنف</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+      <tfoot>
+        <tr id="totalsRow"></tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <p class="note no-print">استخدم زر الطباعة لحفظ PDF</p>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

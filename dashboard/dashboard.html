@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>نظام إدارة المستودعات</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* ===== إضافات بسيطة ===== */
+        .hidden {
+            display: none;
+        }
+
+        .db-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+            margin-top: 40px;
+        }
+
+        .db-card {
+            width: 260px;
+            background: linear-gradient(180deg, #3b6db3, #2f5597);
+            color: white;
+            padding: 16px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+        }
+
+        .db-card:hover {
+            transform: scale(1.05);
+        }
+
+        .back-btn {
+            margin-top: 30px;
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+
+            <div class="nav-left">
+                <div class="logo-box">
+                    <i data-lucide="menu"></i>
+                </div>
+                <div>
+                    <h1>نظام إدارة المستودعات</h1>
+                    <p>الجامعة / الكلية التقنية</p>
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <div class="user-info">
+                    <div class="user-text">
+                        <p class="name">أحمد محمد</p>
+                        <p class="role">مدير المستودع | EMP-2024-001</p>
+                    </div>
+                    <div class="avatar">
+                        <i data-lucide="user"></i>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <button class="logout">
+                    <i data-lucide="log-out"></i>
+                    <span>خروج</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="main">
+
+        <!-- ===== Title ===== -->
+        <div class="title">
+            <h2 id="pageTitle">القائمة الرئيسية</h2>
+            <p id="pageSub">اختر العملية التي تريد القيام بها</p>
+        </div>
+
+        <!-- ===== Main Grid ===== -->
+        <div class="grid" id="mainMenu">
+
+            <div class="card">
+                <div class="icon bg-blue"><i data-lucide="package-plus"></i></div>
+                <h3>إضافة عهدة</h3>
+                <p>تسجيل عهدة جديدة</p>
+                <span class="arrow">➜</span>
+            </div>
+
+            <div class="card">
+                <div class="icon bg-indigo"><i data-lucide="edit"></i></div>
+                <h3>تعديل حالة عهدة</h3>
+                <p>تحديث حالة المواد</p>
+                <span class="arrow">➜</span>
+            </div>
+
+            <div class="card" onclick="location.href='../inventory/stock-type.html'">
+                <div class="icon bg-emerald"><i data-lucide="clipboard-list"></i></div>
+                <h3>إنشاء جرد</h3>
+                <p>بدء عملية جرد</p>
+                <span class="arrow">➜</span>
+            </div>
+
+            <div class="card">
+                <div class="icon bg-purple"><i data-lucide="bar-chart-3"></i></div>
+                <h3>إنشاء تقارير</h3>
+                <span class="arrow">➜</span>
+            </div>
+
+            <div class="card">
+                <div class="icon bg-orange"><i data-lucide="calculator"></i></div>
+                <h3>المقايسة السنوية</h3>
+                <span class="arrow">➜</span>
+            </div>
+
+            <div class="card">
+                <div class="icon bg-teal"><i data-lucide="search"></i></div>
+                <h3>قسم الاستعلامات</h3>
+                <span class="arrow">➜</span>
+            </div>
+
+            <!-- قواعد البيانات -->
+            <div class="card" onclick="openDatabase()">
+                <div class="icon bg-indigo"><i data-lucide="database"></i></div>
+                <h3>قواعد البيانات</h3>
+                <p>البيانات الأساسية</p>
+                <span class="arrow">➜</span>
+            </div>
+
+        </div>
+
+        <!-- ===== Database Section ===== -->
+        <div class="hidden" id="databaseSection">
+
+            <div class="db-container">
+                <div class="db-card" onclick="location.href='../owners/owners.html'">
+                    أصحاب العهد
+                </div>
+
+                <div class="db-card">البنود</div>
+                <div class="db-card">الأصناف</div>
+                <div class="db-card">عهد شخصية</div>
+
+                <button class="back-btn" onclick="backToMain()">
+                    رجوع للقائمة الرئيسية
+                </button>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        نظام إدارة المستودعات v1.0 © 2024
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function openDatabase() {
+            document.getElementById("mainMenu").classList.add("hidden");
+            document.getElementById("databaseSection").classList.remove("hidden");
+            document.getElementById("pageTitle").textContent = "قواعد البيانات";
+            document.getElementById("pageSub").textContent = "";
+        }
+
+        function backToMain() {
+            document.getElementById("databaseSection").classList.add("hidden");
+            document.getElementById("mainMenu").classList.remove("hidden");
+            document.getElementById("pageTitle").textContent = "القائمة الرئيسية";
+            document.getElementById("pageSub").textContent = "اختر العملية التي تريد القيام بها";
+        }
+    </script>
+
+</body>
+
+</html>

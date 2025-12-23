@@ -1,0 +1,102 @@
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #f3f4f6;
+  margin: 0;
+}
+
+.page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+button {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  background: white;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+.filters label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: end;
+  gap: 8px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  background: white;
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: right;
+}
+
+thead {
+  background: #e5e7eb;
+}
+
+tbody tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+tfoot {
+  background: #f3f4f6;
+  font-weight: bold;
+}
+
+.note {
+  margin-top: 15px;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Print */
+@media print {
+  .no-print { display: none; }
+  .print-only { display: block; }
+  body { background: white; }
+}
+
+.print-only {
+  display: none;
+}
+
+.center {
+  text-align: center;
+}

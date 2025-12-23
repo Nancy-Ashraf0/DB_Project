@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>إنشاء جرد</title>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="styles/stock-type.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <button class="back" onclick="location.href='../dashboard/dashboard.html'">
+      <i data-lucide="arrow-right"></i>
+      رجوع
+    </button>
+
+    <div class="title">
+      <h1>إنشاء جرد</h1>
+      <p id="subtitle">اختر نوع الجرد</p>
+    </div>
+  </div>
+
+  <!-- ===== Main Types ===== -->
+  <div class="cards" id="mainTypes">
+
+    <!-- عام -->
+    <div class="card" onclick="showGeneral()">
+      <div class="icon blue">
+        <i data-lucide="archive"></i>
+      </div>
+      <h3>عام</h3>
+      <p>جرد شامل لكل الأصناف</p>
+    </div>
+
+    <!-- عهد شخصية -->
+    <div class="card"
+         onclick="location.href='inventory-create.html?type=personal'">
+      <div class="icon purple">
+        <i data-lucide="user"></i>
+      </div>
+      <h3>عهد شخصية</h3>
+      <p>جرد عهدة لموظف</p>
+    </div>
+
+    <!-- عهد فرعية -->
+    <div class="card"
+          onclick="location.href='select-store.html'">
+      <div class="icon green">
+        <i data-lucide="layers"></i>
+      </div>
+      <h3>عهد فرعية</h3>
+      <p>جرد عهدة لقسم</p>
+    </div>
+
+  </div>
+
+  <!-- ===== General Inventory Types ===== -->
+  <div class="hidden" id="generalSection">
+
+    <!-- Back inside General -->
+    <button class="sub-back" onclick="backToMain()">
+      <i data-lucide="arrow-right"></i>
+      الرجوع لاختيار نوع الجرد
+    </button>
+
+    <div class="cards">
+
+      <div class="red-card"
+           onclick="location.href='inventory-general.html?category=stationery'">
+        <h3>الأدوات الكتابية</h3>
+      </div>
+
+      <div class="red-card"
+           onclick="location.href='inventory-general.html?category=assets'">
+        <h3>المستديم</h3>
+      </div>
+
+      <div class="red-card"
+           onclick="location.href='inventory-general.html?category=cars'">
+        <h3>السيارات</h3>
+      </div>
+
+      <div class="red-card"
+           onclick="location.href='inventory-general.html?category=prints'">
+        <h3>المطبوعات</h3>
+      </div>
+
+      <div class="red-card"
+           onclick="location.href='inventory-general.html?category=used'">
+        <h3>المستعمل</h3>
+      </div>
+
+      <div class="red-card"
+           onclick="location.href='inventory-general.html?category=consumables'">
+        <h3>الاستهلاكي</h3>
+      </div>
+
+      <div class="red-card"
+           onclick="location.href='inventory-general.html?category=crops'">
+        <h3>المحاصيل</h3>
+      </div>
+
+      <div class="red-card"
+           onclick="location.href='inventory-general.html?category=tools'">
+        <h3>الجردة والكهنة</h3>
+      </div>
+
+      <div class="red-card"
+           onclick="location.href='inventory-general.html?category=financial'">
+        <h3>الدفاتر المالية</h3>
+      </div>
+
+      <div class="red-card"
+           onclick="location.href='inventory-general.html?category=origins'">
+        <h3>الأصول</h3>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  lucide.createIcons();
+
+  function showGeneral() {
+    document.getElementById("mainTypes").classList.add("hidden");
+    document.getElementById("generalSection").classList.remove("hidden");
+    document.getElementById("subtitle").textContent = "اختر فئة الجرد العام";
+  }
+
+  function backToMain() {
+    document.getElementById("generalSection").classList.add("hidden");
+    document.getElementById("mainTypes").classList.remove("hidden");
+    document.getElementById("subtitle").textContent = "اختر نوع الجرد";
+  }
+</script>
+
+</body>
+</html>

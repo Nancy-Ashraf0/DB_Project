@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>اختيار اسم المخزن</title>
+  <link rel="stylesheet" href="styles/select-store.css">
+</head>
+<body>
+
+<div class="card-container">
+
+  <h2>اختيار اسم المخزن</h2>
+  <p class="subtitle">اختر المخزن لاستكمال جرد العهدة الفرعية</p>
+
+  <!-- Drop-down بشكل Card -->
+  <div class="select-card">
+    <label for="storeSelect">اسم المخزن</label>
+
+    <select id="storeSelect">
+      <option value="">-- اختر المخزن --</option>
+      <!-- دلوقتي static – بعدين من DB -->
+      <option value="store1">مخزن الأدوات</option>
+      <option value="store2">مخزن المعمل</option>
+      <option value="store3">مخزن السيارات</option>
+      <option value="store4">مخزن المستديم</option>
+    </select>
+  </div>
+
+  <button class="primary" onclick="goToInventory()">
+    متابعة
+  </button>
+
+  <button class="secondary" onclick="location.href='stock-type.html'">
+    رجوع
+  </button>
+
+</div>
+
+<script>
+  function goToInventory() {
+    const store = document.getElementById("storeSelect").value;
+
+    if (!store) {
+      alert("من فضلك اختر اسم المخزن");
+      return;
+    }
+
+    location.href = `inventory-create.html?type=sub&store=${store}`;
+  }
+</script>
+
+</body>
+</html>
+    

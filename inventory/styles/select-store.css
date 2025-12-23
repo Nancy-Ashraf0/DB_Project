@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #f4f6f8;
+  color: #1f2937;
+}
+
+/* ===== Main Card ===== */
+.card-container {
+  max-width: 460px;
+  margin: 120px auto;
+  background: #ffffff;
+  padding: 32px 28px;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  text-align: center;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 24px;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+/* ===== Select Card ===== */
+.select-card {
+  background: #f9fafb;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 24px;
+  border: 2px solid transparent;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.select-card:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+}
+
+.select-card label {
+  display: block;
+  text-align: right;
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+/* ===== Styled Select ===== */
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  background: #ffffff;
+  outline: none;
+  cursor: pointer;
+}
+
+/* ===== Buttons ===== */
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+button.primary {
+  background: #2563eb;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+button.primary:hover {
+  background: #1d4ed8;
+}
+
+button.secondary {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+button.secondary:hover {
+  background: #d1d5db;
+}

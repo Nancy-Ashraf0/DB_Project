@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>إنشاء جرد</title>
+<link rel="stylesheet" href="styles/inventory-create.css">
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ===== Header ===== -->
+  <div class="page-header">
+    <h1>إنشاء جرد</h1>
+
+    <div class="actions">
+      <button class="btn btn-back" onclick="location.href='select-store.html'">
+        رجوع
+      </button>
+      <button class="btn btn-update">
+        تحديث
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== Info ===== -->
+  <div class="info-card">
+    <div class="info-grid">
+      <div class="info-field">
+        <span>اسم الجهة</span>
+        <div class="info-value">كلية هندسة شبرا</div>
+      </div>
+
+      <div class="info-field">
+        <span>اسم المخزن</span>
+        <div class="info-value">معمل ليزر</div>
+      </div>
+
+      <div class="info-field">
+        <span>تاريخ الجرد</span>
+        <div class="info-value">—</div>
+      </div>
+
+      <div class="info-field">
+        <span>اسم البند</span>
+        <div class="info-value">—</div>
+      </div>
+
+      <div class="info-field">
+        <span>اسم صاحب العهدة</span>
+        <div class="info-value">—</div>
+      </div>
+
+      <div class="info-field">
+        <span>نوع العهدة</span>
+        <div class="info-value">فرعية / شخصية</div>
+      </div>
+    </div>
+
+    <div class="title">
+      محضر جرد الأصناف
+    </div>
+  </div>
+
+  <!-- ===== Table ===== -->
+  <div class="table-card">
+    <table>
+      <thead>
+        <tr>
+          <th>رقم الصنف</th>
+          <th>اسم الصنف</th>
+          <th>الوحدة</th>
+          <th>الموجود فعليًا</th>
+          <th>حالة الصنف</th>
+          <th>الرصيد الدفتري</th>
+          <th>حالة الرصيد</th>
+          <th>الزيادة</th>
+          <th>العجز</th>
+          <th>سعر الوحدة</th>
+          <th>القيمة</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="11" class="empty">
+            لا توجد بيانات بعد — سيتم تحميلها من قاعدة البيانات
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+</body>
+</html>

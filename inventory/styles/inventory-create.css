@@ -1,0 +1,130 @@
+
+    body {
+      margin: 0;
+      background: #f4f6f8;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      color: #1f2937;
+    }
+
+    .page {
+      max-width: 1400px;
+      margin: auto;
+      padding: 32px 24px;
+    }
+
+    /* ===== Header ===== */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .page-header h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .btn-back {
+      background: #e5e7eb;
+    }
+
+    .btn-update {
+      background: #2563eb;
+      color: white;
+    }
+
+    /* ===== Info Card ===== */
+    .info-card {
+      background: white;
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      margin-bottom: 24px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .info-field {
+      font-size: 14px;
+    }
+
+    .info-field span {
+      color: #6b7280;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .info-value {
+      font-weight: 600;
+    }
+
+    .title {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    /* ===== Table ===== */
+    .table-card {
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 1200px;
+    }
+
+    thead {
+      background: #f1f5f9;
+    }
+
+    th, td {
+      padding: 14px 12px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    th {
+      font-weight: 600;
+      color: #374151;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    tbody td {
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    tbody tr:hover {
+      background: #f9fafb;
+    }
+
+    .empty {
+      text-align: center;
+      color: #9ca3af;
+      padding: 40px;
+    }
+ 
